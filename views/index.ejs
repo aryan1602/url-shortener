@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortner</title>
+    <style>
+      .container {
+        display: grid;
+        place-content: center;
+        text-align: center;
+        margin-top: 30vh;
+      }
+
+     
+
+      .container input{
+          width: 30vw;
+          height: 4vh;
+          font-size: larger;
+          border: solid rgb(180, 199, 5);
+      }
+
+      .container button{
+          height: 4vh;
+          border-radius: 20px;
+          background-color: rgb(180, 199, 5);
+          color: black;
+          width: 5vw;
+          font-size: larger;
+          padding: 4px;
+          border: none;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>URL Shrinker</h1>
+      <form action="/shortenURL" method="POST">
+        <input type='url' required placeholder="Enter the URL" name="URL_Input" id="URL_Input" />
+        <button type="submit">Shrink</button>
+      </form>
+      <% if(shortened !== "") { %> 
+      <h1><a href=<%=shortened%>><%=shortened%></a></h1>
+      <% } %>
+      <% if (shortened==="") { %>
+        <p>Your link will appear here</p>
+        <% } %>
+    </div>
+  </body>
+</html>
